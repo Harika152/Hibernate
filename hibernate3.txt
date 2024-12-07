@@ -1,0 +1,266 @@
+Files required to create an app
+--------------------------------
+i)Pojo class
+ii)Mapping file(xml)(it gives which data has to be store)
+iii)configuration file(xml)(it gives connection properties of 
+				hibernate).
+
+
+Pojo(Plain old java object)
+---------------------------
+IF a java class which is not exceeded the boundary of java
+api then that class is called as a pojo  class.
+
+IF a java class which is not exceeded the boundary of java
+api then it can be  directly compiled by the java compiler
+by without taking the support of any jar files.
+
+In Hibernate if we want to used pojo class for sending and 
+reading the data then that pojo class should contain a 
+following Qualities.
+
+i)default constructor
+ii)Each variable(Properties) should have setter and getter methods.
+
+WE can make a pojo class as public then that class will become 
+as java bean in hibernate app.
+
+A pojo class in hibernate is also called as a domain  class
+or an Entity class.
+
+
+Mapping file
+-------------
+An application in java can have multiple classes,databases and
+this database can have multiple table.
+
+So hibernate can't understand which java class object is used 
+to be stored in which table of a DB.As a programmer.
+
+We need to tell the hibernate,
+Above mapping information between java class and database tables.
+
+In order to tell these information about mapping to hibernate,
+we need to construct an xml file which is called a mapping file.
+
+In order to identify a mapping file easily in a project,it is 
+recommanded to give extension of a mapping file as ".hbm.xml".
+
+In a mapping file,we write mapping from a java class to a table
+and java class variables to table column using predefined tags
+given by hibernate.
+
+syntax
+------
+className.hbm.xml
+
+<class> tag
+----------
+in this tag we will used two tags
+<id>=only for once(it is compulsary)
+<property>=it can be repeated.
+
+In a mapping file,if a variable name of a class and column name
+of a table both are matched then there is no need of writing 
+column attribute.
+
+ex:
+<property name="marks" column="marks" type="int"/>
+
+Here variable name and column name are same so we 
+can write property tag like the following. 
+
+<property name="marks"  type="int"/>
+
+If a class name and table name are same then we can
+write table attribute in <class> tag.
+
+ex:
+<class name="student"  table="student">
+
+Here class name and table name are same then we writing
+table attribute is optional.
+
+ex:
+<class name="student">
+
+Even though a table does not contain primary key column but
+<id> tag is compulsary. if there is no primary key in column
+then we can map any column of that table as a primary key
+column in <id> tag.
+
+In this case there is  no problem at insertion but problem
+occurs at selecting the data.
+
+In hibernate it is recommanded to create atleast 1 column of a 
+table as primary key column.
+
+In a one mapping file we can  define mapping file any of a class
+in hbm file,we need to repeat <class> tag for multiple times.
+ex:
+<h-m>
+<class ------->
+-----
+</class>
+
+<class ------->
+-----
+</class>
+</h-m>
+In realtime app's,mapping files are created based on modules
+and major sub modules of the projects.
+
+In hibernate,mapping can also be done using Annotations.
+
+
+ex:
+----
+<h-m>
+<class name="fullyqualified name" table="tablname">
+<id name="primary key property" column="primarykeycolumn" 
+type="datatype"/>
+
+<property name="propertyname" column="columnname"
+ type="datatype"/>
+</class>
+</h-m>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

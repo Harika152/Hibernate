@@ -1,0 +1,198 @@
+
+Types of data format
+--------------------------
+we can store the data in
+i)variables(text format)
+ii)object(object format).
+
+In real time application data will be stored
+ in objects and data will be transfer from one 
+layer to another layer in the form of  object.
+
+But while storing the data into database jdbc
+ technology can't transfer object directly.
+
+diagram1.0:
+
+In a project a jdbc technology is used and 
+if the data is in object format then a programmer can
+send a data to database by using one of the following options.
+
+1>A programmer can read the data from a object to variable
+(text format) then a programmer can
+send  and store the data into database using jdbc.
+
+diagram1.1
+
+2>A programmer can serialize an object and a
+ programmer can send a file to database using jdbc.
+
+diagram1.2
+
+3>A programmer can write an object data into a xml file 
+and send xml file to database.
+
+diagram1.3
+
+While reading the data again a programmer will do the
+ conversions needed for converting
+data into object format.
+
+
+Why framework?
+---------------------
+
+Before framework sun given along with api's.
+
+diagram1.4
+
+
+Understanding or remembering all the api's will become 
+burdun to the programmer
+because of this vendor's analyse and given solution which
+ is nothing but framework.
+
+ex:
+Framework contains some common codes which is used in
+ real time projects logic which
+is present in framework class.
+
+Here we need to extends a framework class to over class 
+to write remaining code.
+
+In Framework,Framework using all api's of JEE module indirectly.
+
+diagram1.5
+
+
+
+>In order to develop the realtime projects using java 
+sunmicro system released
+java JEE module.
+
+Java EE module contains large set of api's like Servlets api's,JSP api's,EJB api's,JDNI api's,
+JTA api's, JMS api's and etc.
+
+While creating real time application using java 
+JEE api's increase the burden on the java
+programmer because every java programmer should remember the classes and interfaces 
+which has given as a part of api's of java JEE module.
+
+In order to decrease the burden of a developer third
+ party vendor's started introducing 
+framework in java.
+
+With the help Framework,java programmer will following benefits.
+
+Benefits of Frameworks
+-------------------
+Application can develop and delivery become easy.
+
+Maintainance becomes more easy(modification can be done in existing projects).
+(In real time maintainance projects is used to develop).
+
+To reduce the burden of programmer by providing some common code.
+
+Apache has given first framework (struts) for presentation layer.
+
+JBoss group has given Hibernate for persistence layer.(Gavin ken the first person to develop hibernate when  he was 27 yrs old).
+
+Spring is given by Pivotal Software.
+Spring is a bussiness layer,persentation layer, and persistence layer.
+
+What a Framework?
+--------------------------
+It is a group of classes and interfaces realsed in jar files.
+
+Framwork is a top layer(abstract layer) on existing technologies like jdbc,servlet,jsp  api's and etc.
+
+ex1:
+structs is an opensource Framework created on top of 
+
+			structs
+			    |
+		-------------------------------------------
+		|			|
+	          Servlets api's			JSP api's	
+
+ex2:
+hibernate is an opensource Framework created on top of 
+
+			Hibernate
+			    |
+		-------------------------------------------
+		|	    |		|
+	          JDBC api's	JNDI api's		JTA api's
+
+JNDI:java naming and directory interfaces.
+JTA:java transaction api.
+
+ex3:
+Spring is an opensource Framework created on top of all most all the technologies of JEE. 
+
+			Spring
+			    |
+		-------------------------------------------
+		    	    |
+			All the api's of JEE
+
+
+Hibernate is a middle layer.
+---------------------------------
+diagram:1.6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

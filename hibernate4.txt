@@ -1,0 +1,125 @@
+Configuration file
+------------------
+A configuration file is also an xml file which consist the
+following information.
+i)connection properties
+ii)Hibernate properties
+iii)name and location of a mapping file.
+
+In hibernate, A database conection opening and closing taken
+care by hibernate only  but we need to tell connection  properties
+required to open a connection.this can be done through cfg file.
+
+Apart from storing and reading objects,Hibernates  also provides
+some addition services or features.In order to  tell Hibernate
+what are the addition features required for our project,we need
+to write hibernate properties in a cfg file.
+
+Hibernate reads mapping file along with cfg file only.It is not
+possible to load mapping file seperately.so we need to write name
+and location of mapping files in a cfg file.
+
+A cfg file is an xml and recommanded extention is ".cfg.xml".
+
+cfg in hibernate must be done by using xml only.we don't have
+Annotation to replace this xml file.
+
+We need one cfg file to connect with one DB so the number of 
+cfg files are depending on the number of DB that an app to connect.
+
+ex:
+
+hibernate.cfg.xml
+-------------------
+
+<hibernate-configuration>
+<session-factory>
+<!-- connection properties -->
+<property name="connection.driver_class">
+oracle.jdbc.driver.OracleDriver</property>
+
+<property name="connection.url">
+type4 url</property>
+
+<property name="connection.username">
+system</property>
+
+<property name="connection.password">
+admin</property>
+
+<!-- Hibernate properties -->
+
+<property name="hibenate.dialect">
+org.hibernate.Oracle10gDialect</property>
+
+
+<property name="hibenate.show_sql">
+true</property>
+
+<!-- mapping file-->
+<mapping resource="student.hbm.xml">
+</session-factory>
+</hibernate-configuration>
+
+Here mapping file should be at bottom.
+
+we can place connection properties and hibernate properties 
+any where but not at bottom.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

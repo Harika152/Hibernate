@@ -1,0 +1,138 @@
+Advantage of hibernate
+-----------------------
+HQL
+---
+hibernate introduced its own Query language called HQL(Hibernate
+Query language).This queries written in HQL and it is independent
+to DB.No other ORM tool having these facilities bcz of this
+Hibernate is more famous.
+
+Exception Translation
+---------------------
+Hibernate has given exception Translation,It converts check 
+exception into uncheck exception.so In a project where ever we
+write Hibernate code then we no need of handle exception by
+putting try and catch block or throws keyword.
+
+Hibernate is DB independent
+----------------------------
+diag:2.0
+
+Here Hibernate creates proxy obj when java app retrieve 
+some information.
+If we want to  access any column data with the help of proxy 
+object.
+we call column data and Hibernate goes to DB and retrieve from 
+the DB to java app.
+
+
+why hibernate creates proxy obj?
+-------------------------------
+diagram:2.1
+
+Here we can't read object in our app .it means we will waste 
+one network round trip.
+
+There are two types of loading 
+1)lazy loading(hibernate performs lazy loading)
+2)early loading(programmer performs early loading)
+
+Hibernate introduced lazy loading of objects by using lazy 
+loading features.The object are loaded from DB only if required,
+not loaded unnecessary.by this feature performance of an app
+will be increased/improved.
+
+
+In JDBC
+--------
+If we give first request to servlet program then only object 
+will be created called lazy loading.
+
+If we put <load-on-startup>in web.xml file then immediately 
+servlet object will be created called early loading.
+
+In core java
+------------
+Instance variables are lazy loaded bcz they not occupie memory
+until object is created.
+
+static variables are early loaded bcz they occupie memory before 
+object is created.
+
+caching Mechanism (available only in Hibernate.no other orm tool)
+----------------------------------------------------------------
+diagram:2.2
+
+Hibernate introduced caching mechanism when an object is loaded
+from DB then Hibernate will put in a cache and if same object 
+is needed next time the Hibernate will read from cache.
+By this mechanism no of round trips will reduce b/w java app and
+DB.finally improves performance ofthe app.
+
+Advantages of caching memory
+----------------------------
+Reduces network round trips and gives good performance.
+cache are in two levels
+1)level1 cache
+2)level2 cache
+
+diagram:2.3
+
+criteria api
+-------------
+Hibernate has provided criteria for creating and executing
+tunned Queries on the DB .A programmer is no need to perform
+Query tunning.This feature of Hibernate will optimize
+the performance of an app.
+
+Query tunning problem is recognised by the Hibernate and given
+solution by providing creteria api.
+
+Locking Mechanism
+------------------
+Hibernate has introduced locking mechanism  with this mechanism
+will not allow to override the changes made by one developer
+by another developer.when both the developers are working
+simultenously for this Hibernate introduced versioning and
+timestamd(we will discuss later).
+ex:
+To modify the table.Developer should have current data only
+otherwise in Hibernate it will throw Exception.we called this
+process locking mechnism.
+
+diagram:2.4
+
+Instantly changing DataBase
+-----------------------------
+In hibernate it is possible to instantly change from 1 DataBase
+to Another DataBase.if we want to change DB to another DB
+we don't need to modify the code,we only just modify the 
+XML configuration file.
+
+diagram:2.5
+
+In jdbc also available given below.
+
+diagram:2.6
+
+Developer should read the data from properties file.
+
+Support Relationship and Inheritence
+------------------------------------
+For every project contains multiple class and it is also
+contains multiple tables and for that tables we required 
+relationship.Hibernate will provide very good facilities 
+to have realtionship b/w the tables(records).
+
+Hibernate also provides inheritence support.If we give sub class
+to Hibernate,Hibernate will create two tables in DB.
+one is for parent class/super  class and another for
+child class/sub class.
+
+
+
+
+
+
+
+
